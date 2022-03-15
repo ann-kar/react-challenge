@@ -34,6 +34,7 @@ let theme = createTheme({
     warning: {
       main: '#FFA726',
       light: '#FFF5D2',
+      dark: '#B28C09',
       contrastText: '#fff',
     },
     background: {
@@ -101,6 +102,27 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          minWidth: '2.375rem',
+          minHeight: '2.375rem',
+          padding: '0.5rem',
+          margin: '0 0.5rem',
+          borderRadius: theme.shape.borderRadius,
+          ".MuiButton-startIcon, .MuiButton-endIcon": {
+            margin: 0
+          },
+          "& .MuiSvgIcon-root": {
+            padding: '0.125rem'
+          }
+        },
+      },
+    },
     MuiListItemButton: {
       styleOverrides: {
         root: {
@@ -155,6 +177,26 @@ theme = createTheme(theme, {
           padding: '0',
         },
       },
+    },
+    MuiModal: {
+      styleOverrides: {
+        root: {
+          '& .MuiPaper-root': {
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '28rem',
+            boxShadow: 24,
+            px: 4,
+            py: 5
+          },
+          '& .MuiCardHeader-title': {
+            fontSize: '1.25rem',
+            fontWeight: 700,
+          }
+        }
+      }
     },
     MuiToolbar: {
       styleOverrides: {
